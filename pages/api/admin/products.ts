@@ -40,7 +40,7 @@ const getProducts = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
     product.images = product.images.map((image) => {
       return image.includes("http")
         ? image
-        : `https://${process.env.VERCEL_URL}products/${image}`;
+        : `${process.env.HOST_NAME}products/${image}`;
     });
     return product;
   });
